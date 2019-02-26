@@ -85,7 +85,27 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// While we have some data, might as well analyze the 5K enthusiast market. Log an array with each email client used by runners.
+let emailList = [];
+runners.forEach(runner => emailList.push(runner.email.split("@")[1]))
+console.log(emailList.sort())
 
 // Problem 2
+// Let's see if we can't narrow this down to the high rollers. Return an array of $250+ donors and the company that pays them so handsomely.
+let highRollers = [];
+highRollers = runners.filter(runner => runner.donation > 250);
+highRollers = highRollers.map(runner => `${runner.first_name} ${runner.last_name} donated $${runner.donation} and works at ${runner.company_name}.`)
+console.log(highRollers)
 
 // Problem 3
+// Trevor Studd is clearly some sort of prank name. Remove him from the roster!
+let i = runners.findIndex(runner => runner.last_name === "Studd") + 1;
+let runnersFixed = runners.filter(runner => runner.last_name !== "Studd");
+runnersFixed.push({id: i,
+    first_name: 'Place',
+    last_name: 'Holder',
+    email: 'place@holder.com',
+    shirt_size: 'N/A',
+    company_name: 'N/A',
+    donation: 0})
+console.log(runnersFixed)
