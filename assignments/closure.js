@@ -1,6 +1,21 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function parrot(phrase) {
+  const name = "Polly"
+  function hungry() {
+    let amHungry = true;
+    console.log(`${name} wanna cracker!`);
+    debugger;
+  }
+
+  console.log(`${phrase}, ${phrase}`)
+  hungry()
+}
+
+parrot("Hello")
+
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
